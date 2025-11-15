@@ -1,8 +1,5 @@
 # Collaborative Canvas — Submission
 
-## What this is
-A vanilla JS collaborative drawing canvas using Socket.IO. Multiple users can draw in real-time, see other users, and use shared undo/redo.
-
 ## How to run
 1. `npm install`
 2. `npm start`
@@ -22,9 +19,6 @@ A vanilla JS collaborative drawing canvas using Socket.IO. Multiple users can dr
 - Canvas replay can get slower with many ops; snapshotting or periodic image snapshots would help.
 - Cursor positions are approximate (client-side), not interpolated.
 - No persistent DB storage (ops are in-memory)
-
-## Time spent
-~X hours (replace with your actual estimate)
 
 ## How to test
 - Open multiple windows, draw in one — see live strokes in others.
