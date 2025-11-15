@@ -1,6 +1,8 @@
 export default function SocketClient(){
 
-  const sock = io()
+ const socket = io("https://akshatxtwri-collaborative-canvas-backend.onrender.com", {
+    transports: ["websocket"]
+});
 
   function on(e,f){
       sock.on(e,f)
