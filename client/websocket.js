@@ -1,42 +1,40 @@
-export default function SocketClient(){
+export default function SocketClient() {
 
- const socket = io("https://akshatxtwri-collaborative-canvas-backend.onrender.com", {
-    transports: ["websocket"]
-});
+    const socket = io("https://akshatxtwri-collaborative-canvas-backend.onrender.com", {
+        transports: ["websocket"]
+    });
 
-  function on(e,f){
-      sock.on(e,f)
-  }
+    function on(event, fn) {
+        socket.on(event, fn);
+    }
 
-  function join(r,m){
-      sock.emit("join",{roomId:r,meta:m})
-  }
+    function join(room, meta) {
+        socket.emit("join", { roomId: room, meta });
+    }
 
-  function sendStroke(o){
-      sock.emit("op",o)
-  }
+    function sendStroke(op) {
+        socket.emit("op", op);
+    }
 
-  function sendUndo(){
-      sock.emit("undo")
-  }
+    function sendUndo(data) {
+        socket.emit("undo", data);
+    }
 
-  function sendRedo(){
-      sock.emit("redo")
-  }
+    function sendRedo(data) {
+        socket.emit("redo", data);
+    }
 
-  function sendCursor(c){
-      sock.emit("cursor",c)
-  }
+    function sendCursor(data) {
+        socket.emit("cursor", data);
+    }
 
-
-  return{
-      on,
-      join,
-      sendStroke,
-      sendUndo,
-      sendRedo,
-      sendCursor,
-      raw:sock
-  }
-
+    return {
+        on,
+        join,
+        sendStroke,
+        sendUndo,
+        sendRedo,
+        sendCursor,
+        raw: socket
+    };
 }
